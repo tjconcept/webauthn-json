@@ -50,8 +50,7 @@ navigator.credentials.create({
 Ponyfill of
 [`PublicKeyCredential.parseCreationOptionsFromJSON()`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static).
 
-The function decodes Base64-URL encoded strings in `challenge` and `user.id` to
-`Uint8Array` values.
+Decode Base64-URL strings in `challenge` and `user.id` to `Uint8Array` values.
 
 ### Example
 
@@ -66,8 +65,8 @@ navigator.credentials.create({
 Partner (reverse) of
 [`PublicKeyCredential.parseCreationOptionsFromJSON()`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static).
 
-The function encodes `ArrayBuffer` or `Uint8Array` values in `challenge` and
-`user.id` to Base64-URL strings.
+Encode `ArrayBuffer` or `Uint8Array` values in `challenge` and `user.id` as
+Base64-URL strings.
 
 ### Example
 
@@ -91,8 +90,8 @@ sendToClient(JSON.stringify(serverResponse))
 Ponyfill of
 [`PublicKeyCredential.parseRequestOptionsFromJSON()`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static).
 
-The function decodes Base64-URL encoded strings in `challenge` and
-`allowCredentials[].id` to `Uint8Array` values.
+Decode Base64-URL strings in `challenge` and `allowCredentials[].id` to
+`Uint8Array` values.
 
 ### Example
 
@@ -107,8 +106,8 @@ navigator.credentials.get({
 Partner (reverse) of
 [`PublicKeyCredential.parseRequestOptionsFromJSON()`](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static).
 
-The function encodes `ArrayBuffer` or `Uint8Array` values in `challenge` and
-`allowCredentials[].id` to Base64-URL strings.
+Encode `ArrayBuffer` or `Uint8Array` values in `challenge` and
+`allowCredentials[].id` as Base64-URL strings.
 
 ### Example
 
@@ -135,8 +134,8 @@ sendToClient(JSON.stringify(serverResponse))
 
 ## `assertionToJSON(credential)`
 
-The function encodes `ArrayBuffer` or `Uint8Array` values in the following paths
-to Base64-URL strings:
+Encode `ArrayBuffer` or `Uint8Array` values in the following paths as Base64-URL
+strings:
 
 - `rawId`
 - `response.authenticatorData`
@@ -158,8 +157,7 @@ navigator.credentials
 
 ## `assertionFromJSON(json)`
 
-The function decodes Base64-URL encoded strings in the following paths to
-`Uint8Array` values:
+Decode Base64-URL strings in the following paths to `Uint8Array` values:
 
 - `rawId`
 - `response.authenticatorData`
@@ -176,8 +174,8 @@ const assertion = assertionFromJSON(JSON.parse(clientResponse))
 
 ## `attestationToJSON(credential)`
 
-The function encodes `ArrayBuffer` or `Uint8Array` values to Base64-URL strings
-and replaces "getter" functions with their result:
+Encode `ArrayBuffer` or `Uint8Array` values as Base64-URL strings and replace
+"getter" functions with their result:
 
 - `rawId` is Base64-URL encoded
 - `response.attestationObject` is Base64-URL encoded
@@ -202,8 +200,7 @@ navigator.credentials
 
 ## `attestationFromJSON(json)`
 
-The function decodes Base64-URL encoded strings in the following paths to
-`Uint8Array` values:
+Decode Base64-URL strings in the following paths to `Uint8Array` values:
 
 - `rawId`
 - `response.attestationObject`
