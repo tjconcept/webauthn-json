@@ -1,0 +1,11 @@
+on: push
+jobs:
+  tests:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - uses: actions/checkout@v4
+      - run: deno --allow-env --allow-read test.js
