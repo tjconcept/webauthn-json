@@ -1,0 +1,21 @@
+on: push
+jobs:
+  tests:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    env:
+      DENO_DIR: deno_dependency_cache
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Deno (v2)
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Cache Deno dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.DENO_DIR }}
+          key: cache_key_v1
+      - name: Run tests
+        run: deno --allow-env --allow-read test.js
