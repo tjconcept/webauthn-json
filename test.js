@@ -1,5 +1,4 @@
-// import test from 'https://esm.sh/tape@5.9.0'
-import test from 'npm:tape'
+import test from 'https://esm.sh/tape@5.9.0'
 import {
 	pubKeyCredParams,
 	creationOptionsToJSON,

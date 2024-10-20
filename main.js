@@ -2,7 +2,7 @@ import {
 	encodeBase64Url,
 	decodeBase64Url,
 } from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
-import {concat} from 'jsr:@std/bytes@1.0.2'
+import {concat} from 'https://esm.sh/jsr/@std/bytes@1.0.2/concat.js'
 import join from 'https://esm.sh/psjoin@1.0.0'
 
 export const pubKeyCredParams = [

@@ -23,7 +23,7 @@ pubKeyCredParams = [
 
 ## `pubKeyCredParams`
 
-a convenient list of common algorithms that can be filtered or sorted to
+A convenient list of common algorithms that can be filtered or sorted to
 specific needs.
 
 ### Example
