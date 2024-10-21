@@ -1,0 +1,26 @@
+on:
+  push:
+    tags: "v*.*.*"
+jobs:
+  tests:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Deno (v2)
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Read version
+        id: read-version
+        run: |
+          version=$(echo ${{env.GITHUB_REF_NAME}} | cut -c 2-)
+          echo "::set-output name=version::$version"
+      - name: Write jsr.json
+        uses: devops-actions/json-to-file@v1.0.4
+        with:
+          json: '{"name": "${{ env.GITHUB_ACTION_REPOSITORY }}", "version": "${{steps.read-version.outputs.version}}, "exports": "./main.js""}'
+          filename: "jsr.json"
+      - name: Publish to JSR
+        run: deno publish --dry-run
