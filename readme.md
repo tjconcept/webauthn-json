@@ -3,6 +3,24 @@
 A set of functions for converting to and from JSON compatible structures, useful
 for passing these values between clients and servers as JSON strings.
 
+## Example
+
+```js
+import {
+  parseCreationOptionsFromJSON,
+  attestationToJSON,
+} from 'https://esm.sh/gh/tjconcept/webauthn-json@1.1.0'
+
+function signUp() {
+  const credential = navigator.credentials.create({
+    publicKey: parseCreationOptionsFromJSON(JSON.parse(serverWebauthnCreate())),
+  })
+  join(credential, (credential) =>
+    serverWebauthnStore(JSON.stringify(attestationToJSON(credential))),
+  )
+}
+```
+
 ## Exports
 
 ```
