@@ -55,7 +55,7 @@ export default {
 			timeout: 12000,
 			userVerification: 'preferred',
 		},
-		assertation: {
+		assertion: {
 			id: 'qUF03DqDh8Km7CUrQUOK6zrrpm79EIOR31DMDtEW9xE',
 			rawId,
 			response: {
@@ -180,7 +180,7 @@ export default {
 			timeout: 12000,
 			userVerification: 'preferred',
 		},
-		assertation: {
+		assertion: {
 			id: 'qUF03DqDh8Km7CUrQUOK6zrrpm79EIOR31DMDtEW9xE',
 			rawId: 'qUF03DqDh8Km7CUrQUOK6zrrpm79EIOR31DMDtEW9xE',
 			response: {

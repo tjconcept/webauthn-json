@@ -107,16 +107,16 @@ test('`parseRequestOptionsFromJSON`', (t) => {
 
 test('`assertionToJSON`', (t) => {
 	t.deepEqual(
-		assertionToJSON(fixtures.internal.assertation),
-		fixtures.json.assertation,
+		assertionToJSON(fixtures.internal.assertion),
+		fixtures.json.assertion,
 	)
 	t.end()
 })
 
 test('`assertionFromJSON`', (t) => {
 	t.deepEqual(
-		assertionFromJSON(fixtures.json.assertation),
-		fixtures.internal.assertation,
+		assertionFromJSON(fixtures.json.assertion),
+		fixtures.internal.assertion,
 	)
 	t.end()
 })
