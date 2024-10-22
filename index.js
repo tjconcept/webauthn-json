@@ -138,10 +138,13 @@ export function attestationToJSON(credential) {
 		response: {
 			attestationObject: encodeBase64Url(r.attestationObject),
 			clientDataJSON: encodeBase64Url(r.clientDataJSON),
-			authenticatorData: encodeBase64Url(r.getAuthenticatorData()),
-			publicKey: encodeBase64Url(r.getPublicKey()),
-			publicKeyAlgorithm: r.getPublicKeyAlgorithm(),
-			transports: r.getTransports(),
+			authenticatorData: encodeBase64Url(
+				r.getAuthenticatorData?.() ?? r.authenticatorData,
+			),
+			publicKey: encodeBase64Url(r.getPublicKey?.() ?? r.publicKey),
+			publicKeyAlgorithm:
+				r.getPublicKeyAlgorithm?.() ?? r.publicKeyAlgorithm,
+			transports: r.getTransports?.() ?? r.transports,
 		},
 		authenticatorAttachment: credential.authenticatorAttachment,
 		clientExtensionResults: {},

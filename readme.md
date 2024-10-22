@@ -208,11 +208,14 @@ Decode Base64-URL strings in the following paths to `Uint8Array` values:
 - `response.authenticatorData`
 - `response.publicKey`
 
-Note that this function is not an exact mirroring of `attestationToJSON` as it
-will not reproduce the "getter" functions but replace them with a corresponding
-key-value pair, e.g. `getAuthenticatorData: () → String` is replaced by
-`authenticatorData: String`. This means
-`attestationToJSON(attestationFromJSON(json))` will not work.
+Note that this function is not an exact mirroring of
+`attestationToJSON(PublicKeyCredential)` as it will not reproduce the "getter"
+functions but replace them with a corresponding key-value pair, e.g.
+`getAuthenticatorData: () → String` is replaced by `authenticatorData: String`.
+However, it _is_ a mirroring of `attestationToJSON(json)`, such that
+`attestationToJSON(attestationFromJSON(json))` _will work_. This simply means it
+works as expected and can be used on both ends to transfer or store attestations
+(e.g. using `JSON.stringify/parse`).
 
 ### Example
 

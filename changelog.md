@@ -8,6 +8,10 @@ and this project adheres to
 
 ## Unreleased
 
+### Added
+
+- `attestationToJSON` supports the output of `attestationFromJSON`
+
 ## 1.0.0 - 2024-10-22
 
 ### Added
