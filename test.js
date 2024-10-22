@@ -290,7 +290,7 @@ test('`assertionToJSON`', (t) => {
 
 test('`assertionFromJSON`', (t) => {
 	t.deepEqual(
-		{
+		assertionFromJSON({
 			id: 'qUF03DqDh8Km7CUrQUOK6zrrpm79EIOR31DMDtEW9xE',
 			rawId: 'qUF03DqDh8Km7CUrQUOK6zrrpm79EIOR31DMDtEW9xE',
 			response: {
@@ -305,8 +305,8 @@ test('`assertionFromJSON`', (t) => {
 			authenticatorAttachment: 'platform',
 			clientExtensionResults: {},
 			type: 'public-key',
-		},
-		assertionToJSON({
+		}),
+		{
 			id: 'qUF03DqDh8Km7CUrQUOK6zrrpm79EIOR31DMDtEW9xE',
 			rawId: new Uint8Array([
 				0xa9, 0x41, 0x74, 0xdc, 0x3a, 0x83, 0x87, 0xc2, 0xa6, 0xec,
@@ -363,7 +363,7 @@ test('`assertionFromJSON`', (t) => {
 			authenticatorAttachment: 'platform',
 			clientExtensionResults: {},
 			type: 'public-key',
-		}),
+		},
 	)
 	t.end()
 })
