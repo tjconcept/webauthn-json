@@ -114,10 +114,25 @@ test('`assertionToJSON`', (t) => {
 })
 
 test('`assertionFromJSON`', (t) => {
-	t.deepEqual(
-		assertionFromJSON(fixtures.json.assertion),
-		fixtures.internal.assertion,
-	)
+	t.deepEqual(assertionFromJSON(fixtures.json.assertion), {
+		...fixtures.internal.assertion,
+		rawId: new Uint8Array(fixtures.internal.assertion.rawId),
+		response: {
+			...fixtures.internal.assertion.response,
+			authenticatorData: new Uint8Array(
+				fixtures.internal.assertion.response.authenticatorData,
+			),
+			clientDataJSON: new Uint8Array(
+				fixtures.internal.assertion.response.clientDataJSON,
+			),
+			signature: new Uint8Array(
+				fixtures.internal.assertion.response.signature,
+			),
+			userHandle: new Uint8Array(
+				fixtures.internal.assertion.response.userHandle,
+			),
+		},
+	})
 	t.end()
 })
 
@@ -136,9 +151,24 @@ test('`attestationToJSON`', (t) => {
 })
 
 test('`attestationFromJSON`', (t) => {
-	t.deepEqual(
-		attestationFromJSON(fixtures.json.attestation),
-		fixtures.internal.attestation,
-	)
+	t.deepEqual(attestationFromJSON(fixtures.json.attestation), {
+		...fixtures.internal.attestation,
+		rawId: new Uint8Array(fixtures.internal.attestation.rawId),
+		response: {
+			...fixtures.internal.attestation.response,
+			attestationObject: new Uint8Array(
+				fixtures.internal.attestation.response.attestationObject,
+			),
+			clientDataJSON: new Uint8Array(
+				fixtures.internal.attestation.response.clientDataJSON,
+			),
+			authenticatorData: new Uint8Array(
+				fixtures.internal.attestation.response.authenticatorData,
+			),
+			publicKey: new Uint8Array(
+				fixtures.internal.attestation.response.publicKey,
+			),
+		},
+	})
 	t.end()
 })

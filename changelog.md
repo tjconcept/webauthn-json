@@ -8,6 +8,10 @@ and this project adheres to
 
 ## Unreleased
 
+### Changed
+
+- Use native toBase64 and fromBase64 methods
+
 ### Fixed
 
 - Make tests run by pinning esm.sh version

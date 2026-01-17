@@ -1,8 +1,3 @@
-import {
-	encodeBase64Url,
-	decodeBase64Url,
-} from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
-
 export const pubKeyCredParams = [
 	{alg: -8, type: 'public-key'}, // EdDSA
 	{alg: -7, type: 'public-key'}, // ES256
@@ -168,4 +163,15 @@ export function attestationFromJSON(json) {
 		clientExtensionResults: json.clientExtensionResults,
 		type: json.type,
 	}
+}
+
+function encodeBase64Url(data) {
+	const typed = data instanceof ArrayBuffer ? new Uint8Array(data) : data
+	return typed.toBase64({alphabet: 'base64url', omitPadding: true})
+}
+
+function decodeBase64Url(encoded) {
+	return Uint8Array.fromBase64(encoded, {
+		alphabet: 'base64url',
+	})
 }
