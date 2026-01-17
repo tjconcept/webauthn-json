@@ -2,7 +2,6 @@ import {
 	encodeBase64Url,
 	decodeBase64Url,
 } from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
-import {concat} from 'https://esm.sh/jsr/@std/bytes@1.0.2/concat.js'
 
 export const pubKeyCredParams = [
 	{alg: -8, type: 'public-key'}, // EdDSA

@@ -8,6 +8,10 @@ and this project adheres to
 
 ## Unreleased
 
+### Fixed
+
+- Remove an unused import
+
 ## 1.1.0 - 2024-10-22
 
 ### Added
