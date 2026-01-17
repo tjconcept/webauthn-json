@@ -9,7 +9,7 @@ for passing these values between clients and servers as JSON strings.
 import {
   parseCreationOptionsFromJSON,
   attestationToJSON,
-} from 'https://esm.sh/gh/tjconcept/webauthn-json@1.1.0'
+} from 'https://esm.sh/gh/tjconcept/webauthn-json@1.2.0'
 
 function signUp() {
   const credential = navigator.credentials.create({
