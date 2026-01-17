@@ -10,6 +10,7 @@ and this project adheres to
 
 ### Fixed
 
+- Make tests run by pinning esm.sh version
 - Remove an unused import
 
 ## 1.1.0 - 2024-10-22

@@ -1,4 +1,4 @@
-import test from 'https://esm.sh/tape@5.9.0'
+import test from 'https://esm.sh/tape@5.9.0?pin=v135'
 import fixtures from './fixtures.js'
 import {
 	pubKeyCredParams,
